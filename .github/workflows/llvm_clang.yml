@@ -27,11 +27,12 @@ jobs:
           git config --global pull.rebase true
           git config --global rebase.autoStash true
           git config --global fetch.prune true
-          git config --global --add safe.directory $PWD
+          git config --global --add safe.directory $(pwd)
 
-      - uses: actions/checkout@main
+      - uses: actions/checkout@v2
         with:
-          ref: master
+          fetch-depth: 0 # or '1' if you only need the latest commit  
+          ref: main # ensure this is your default branch if 'master' doesn't exist
 
       - name: Loading clang root
         id: clang_root_cache
