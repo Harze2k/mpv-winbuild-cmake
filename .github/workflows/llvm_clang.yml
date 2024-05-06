@@ -32,7 +32,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0 # or '1' if you only need the latest commit  
-          ref: main # ensure this is your default branch if 'master' doesn't exist
+          ref: mpv-different-versions # ensure this is your default branch if 'master' doesn't exist
 
       - name: Loading clang root
         id: clang_root_cache
